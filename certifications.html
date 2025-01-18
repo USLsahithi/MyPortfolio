@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Certifications - USL Sahithi</title>
+    <!-- box icon-->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/boxicons@latest/css/boxicons.min.css">
+    <!-- Roboto Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;400&display=swap" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet" />
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap" rel="stylesheet" />
+    <!-- MDB -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/4.1.0/mdb.min.css" rel="stylesheet" />
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/4.1.0/mdb.min.js"></script>
+    <!-- Animate Library -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+    <style>
+        body {
+            background: linear-gradient(120deg, #f8f9fa, #e7e9fc);
+            color: #333;
+            font-family: 'Roboto', sans-serif;
+            margin: 0;
+            padding: 0;
+           
+        }
+
+        /* Header Styles */
+        header {
+            position: fixed;
+            top: 0;
+            right: 0;
+            z-index: 1000;
+            width: 100%;
+            background-color: #716be4; /* Updated to match the design */
+            
+            padding: 9px 6%;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            transition: all 0.5s ease;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        .logo {
+            font-size: 30px;
+            font-weight: 700;
+            color: white; /* Contrast with the navbar */
+        }
+
+        .logo span {
+            color: #f8f9fa;
+            transition: transform 0.3s ease;
+        }
+
+        .logo span:hover {
+            transform: scale(1.2);
+        }
+
+        /* Navbar */
+        .navbar-nav {
+            display: flex;
+            align-items: center;
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
+
+        .navbar-nav.ms-auto {
+            margin-left: auto;
+        }
+
+        .nav-item {
+            font-size: 17px;
+            font-weight: 400;
+        }
+
+        .nav-item a {
+            color: #333;
+            position: relative;
+            text-decoration: none;
+            padding: 8px 12px;
+            transition: color 0.3s;
+        }
+
+        
+
+        .nav-item a::after {
+            content: "";
+            position: absolute;
+            left: 0;
+            bottom: -5px;
+            width: 0;
+            height: 3px;
+            background: white;
+            transition: 0.3s;
+        }
+
+        .nav-item a:hover::after {
+            width: 100%;
+        }
+
+        .navbar-toggler {
+            border: none;
+            background-color: transparent;
+        }
+
+        .navbar-toggler .fas {
+            color: white;
+            font-size: 20px;
+        }
+            
+        /* Certifications Section */
+        .carousel {
+            width: 100%;
+            max-width: 600px;
+            position: relative;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+            margin-left: auto; /* Center the carousel horizontally */
+            margin-right: auto;
+            box-sizing: border-box;
+        }
+
+        .carousel-inner {
+            position: relative;
+            overflow: hidden;
+        }
+
+        .carousel-item {
+            display: none;
+            justify-content: center;
+            align-items: center;
+            height: 300px;
+            text-align: center;
+        }
+
+        .carousel-item.active {
+            display: flex;
+        }
+
+        .project-card {
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            width: 100%;
+            max-width: 500px;
+            padding: 20px;
+            text-align: center;
+        }
+
+        
+
+        .project-card h6 {
+            margin: 15px 0 10px;
+            font-size: 20px;
+            color:  #4b4b4b;
+        }
+
+        .project-card p {
+            font-size: 16px;
+            color: #6c757d;
+
+        }
+
+        .view-btn {
+            background: linear-gradient(to right, #6c63ff, #8a68ff);
+            border: none;
+            color: #fff;
+            padding: 10px 20px;
+            margin-top: 10px;
+            border-radius: 5px;
+            font-size: 16px;
+            text-transform: uppercase;
+            transition: transform 0.2s ease-in-out, background-color 0.3s;
+        }
+
+        .view-btn:hover {
+            background: linear-gradient(to right, #8a68ff, #6c63ff);
+            transform: scale(1.05);
+            cursor: pointer;
+            
+        }
+        .view-btn:link,
+        .view-btn:visited {
+            color: white; /* Ensure text color stays white */
+        }
+
+        /* Arrows styling */
+        .carousel-control-prev,
+        .carousel-control-next {
+            width: auto;
+        }
+
+        .carousel-control-prev-icon,
+        .carousel-control-next-icon {
+            width: 40px;
+            height: 40px;
+            background: linear-gradient(to right, #6c63ff, #8a68ff);
+            border-radius: 50%;
+        }
+
+        .carousel-control-prev,
+        .carousel-control-next {
+            z-index: 2;
+            top: 50%;
+            transform: translateY(-50%);
+            padding: 10px;
+        }
+
+        .carousel-control-prev {
+            left: -60px; /* Create space between arrow and card */
+        }
+
+        .carousel-control-next {
+            right: -60px; /* Create space between arrow and card */
+        
+
+        /* Responsive for smaller screens */
+      
+            @media (max-width: 768px) {
+            .carousel {
+                margin-left: 0; /* Remove left margin */
+                margin-right: 0; /* Remove right margin */
+                padding: 10px; /* Reduce padding for better fit */
+                height: auto;
+            }
+            .project-card {
+                width: 100%; /* Make project cards take full width */
+                max-width: none; /* Remove max-width restriction */
+                max-height: auto;
+                padding: 15px; /* Slightly reduce padding for mobile */
+                border-radius: 30px;
+                
+            }
+        }
+        
+
+    </style>
+</head>
+
+<body>
+    <header class="navbar navbar-expand-lg navbar-light shadow-0">
+        <div class="container-fluid">
+            <!-- Logo -->
+            <a href="#" class="logo">
+                <span>S</span>
+                <span>A</span>
+                <span>H</span>
+                <span>I</span>
+                <span>T</span>
+                <span>H</span>
+                <span>I</span>
+            </a>
+
+            <!-- Toggle Button for Mobile -->
+            <button class="navbar-toggler" type="button" data-mdb-toggle="collapse" data-mdb-target="#navbarRightAlignExample" aria-controls="navbarRightAlignExample" aria-expanded="false" aria-label="Toggle navigation">
+                <i class="fas fa-bars"></i>
+            </button>
+
+            <!-- Navbar Links -->
+            <div class="collapse navbar-collapse" id="navbarRightAlignExample">
+                <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                    <li class="nav-item p-3">
+                        <a class="text-purple-400 active-link" href="index.html">Home</a>
+                    </li>
+                    <li class="nav-item p-3">
+                        <a class="text-dark" href="skills.html">Skills</a>
+                    </li>
+                    <li class="nav-item p-3">
+                        <a class="text-dark" href="projects.html">Projects</a>
+                    </li>
+                    <li class="nav-item p-3">
+                        <a class="text-dark" href="certifications.html">Certifications</a>
+                    </li>
+                    <li class="nav-item p-3">
+                        <a class="text-dark" href="contact.html">Contact</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </header>
+  
+    <section id="projects">
+        <h2 style="text-align: center; margin-bottom: 30px; margin-top: 30px">Explore My Certifications</h2>
+        <div id="portfolioCarousel" class="carousel slide" data-bs-ride="carousel">
+            <div class="carousel-inner">
+                <!-- Card 1 -->
+                <div class="carousel-item active">
+                    <div class="project-card">
+                        <h6>Programming Essentials in Python (PCAP)</h6>
+                        <p>Achieved Cisco PCAP certification, enhancing expertise in Python programming. Demonstrated strong foundational skills and practical knowledge in Python-based projects.</p>
+                        <a href="CISCO_PCAP.pdf" class="view-btn">Certificate</a>
+                    </div>
+                </div>
+                <!-- Card 6 -->
+                <div class="carousel-item">
+                    <div class="project-card">
+                        <h6>Introduction to Data Science issued by CISCO</h6>
+                        <p>Completed the "Introduction to Data Science" certification, covering fundamental concepts of data analysis, data visualization, and statistical methods. Acquired essential knowledge to work with datasets and derive insights for business decision-making. </p>
+                        <a href="Introduction_to_Data_Science_CISCO.pdf" class="view-btn">Certificate</a>
+                    </div>
+                </div>
+                <!-- Card 4 -->
+                <div class="carousel-item">
+                    <div class="project-card">
+                        <h6>Data Analytics Essentials Issued by CISCO</h6>
+                        <p>Earned the "Data Analytics Essentials" certification, focusing on data manipulation, exploratory data analysis, and reporting. Built proficiency in analytical tools and techniques to interpret data and generate actionable insights. </p>
+                        <a href="Data_Analytics_Essentials_CISCO.pdf" class="view-btn">Certificate</a>
+                    </div>
+                </div>
+                <!-- Card 2 -->
+                <div class="carousel-item">
+                    <div class="project-card">
+                        <h6>Python Intern at CodeSpeedyTechnologies Pvt Ltd</h6>
+                        <p>Assisting in the design and implementation of Python-basedsoftware modules, contributing to the development of 
+                            scalable and efficient applications.</p>
+                        <a href="Python_intern_Codespeedy.pdf" class="view-btn">Certificate</a>
+                    </div>
+                </div>
+                <!-- Card 3 -->
+                <div class="carousel-item">
+                    <div class="project-card">
+                        <h6>Shell-Edunet Skills4Future AICTE Internship</h6>
+                        <p>Gained hands-on experience in data pre-processing, DAX modeling, and visualization techniques and Developed an 
+                            interactive Power BI dashboard to analyze energy consumption trends, highlighting key insights. </p>
+                            <a href="" class="view-btn">Certificate</a>
+                    </div>
+                </div>
+                <!-- Card 7 -->
+                <div class="carousel-item">
+                    <div class="project-card">
+                        <h6>AI-ML Virtual Internship issued by EDUSKILLS</h6>
+                        <p>Participated in the AI-ML Virtual Internship, gaining hands-on experience with real-world projects involving Artificial Intelligence and Machine Learning. Developed practical skills in data preprocessing, model building, and evaluation using various ML algorithms.</p>
+                        <a href="AI-ML_Virtual_Intern.pdf" class="view-btn">Certificate</a>
+                    </div>
+                </div>
+                <!-- Card 5 -->
+                <div class="carousel-item">
+                    <div class="project-card">
+                        <h6>DATA and BUSINESS ANALYTICS Training Issued by TechTip24</h6>
+                        <p>Completed comprehensive training on "Data and Business Analytics," learning advanced data analysis techniques, visualization tools, and business intelligence methods. Applied these skills to solve business problems and support strategic decision-making. </p>
+                        <a href="DACT_Training.pdf" class="view-btn">Certificate</a>
+                    </div>
+                </div>
+                
+                
+                
+                
+            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#portfolioCarousel" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#portfolioCarousel" data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Next</span>
+            </button>
+        </div>
+    
+        <!-- Bootstrap JS -->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"></script>
+
+    
+
+    </section>
+        
+    </body>
+    </html>
